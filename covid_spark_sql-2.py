@@ -40,9 +40,9 @@ task_2.show(10, truncate=False)
 rows = task_2.collect()
 
 with open("result_task_2.txt", "w", encoding="utf-8") as file:
-    file.write("iso_code,country,percent_cases\n")
+    file.write("date,country,new_cases\n")
 
     for row in rows:
-        file.write(f"{row['iso_code']},{row['country']},{row['percent_cases']}\n")
+        file.write(f"{row['date']},{row['country']},{row['new_cases']}\n")
 
 spark.stop()
